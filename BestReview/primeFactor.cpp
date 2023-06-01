@@ -4,25 +4,24 @@
 class PrimeFactor
 {
 public:
-	std::vector<int> of(int t)
+	std::vector<int> of(int number)
 	{
-		std::vector<int> pri = {};
-		if (t <= 1) return pri;
+		std::vector<int> results = {};
+		if (number <= 1) return results;
 
-		while(t > 1)
+		while(number > 1)
 		{
-			for (int n = 2; n <= t; n++)
+			for (int divisor = 2; divisor <= number; divisor++)
 			{
-				if (t % n == 0)
+				if (number % divisor == 0)
 				{
-					pri.push_back(n);
-					t = t / n;
+					results.push_back(divisor);
+					number = number / divisor;
 					break;
 				}
 			}
 		}
-
 		
-		return pri;
+		return results;
 	}
 };
