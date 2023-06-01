@@ -1,24 +1,11 @@
 #include "pch.h"
 #include <string>
 #include <gtest/gtest.h>
-#include <C:\reviewer\workspace\test5\BestReview\Account.cpp>
+#include <C:\reviewer\workspace\test6\BestReview\primeFactor.cpp>
 
-class AccountFixture : public testing::Test
+TEST(PrimeFactor, of1)
 {
-public:
-	Account acc{ 10000 };
-};
-
-TEST_F(AccountFixture, getBalance) {
-	EXPECT_EQ(10000, acc.getBalance());
-}
-
-TEST_F(AccountFixture, deposit) {
-	acc.Deposit(100);
-	EXPECT_EQ(10100, acc.getBalance());
-}
-
-TEST_F(AccountFixture, withdrawl) {
-	acc.Withdraw(100);
-	EXPECT_EQ(9900, acc.getBalance());
+	PrimeFactor pf;
+	std::vector<int> expected = {};
+	EXPECT_EQ(expected, pf.of(1));
 }
